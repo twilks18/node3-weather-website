@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode');
 const hbs = require('hbs'); //Do not need to load when creating only views(see handlebars setup),but is needed for partials
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 //Define paths for Express config
 const publicDirectory = path.join(__dirname, '../public');
@@ -104,6 +105,6 @@ app.get('*', (req, res) => {
 //app.com/help
 //app.com/about
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000');
+app.listen(port, () => {
+    console.log('Server is up on port ' + port);
 });

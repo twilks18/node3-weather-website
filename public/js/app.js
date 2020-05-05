@@ -11,7 +11,7 @@ weatherForm.addEventListener('submit', (e) => {
     const location = search.value //can't put a semi colon at the end of value
     messageOne.textContent = 'loading...';
     messageTwo.textContent = '';
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then((response) => {
         response.json().then((data) => {
 
             if (data.error) {
